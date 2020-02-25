@@ -10,8 +10,13 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => res.render('home'));
 
-app.post('/signup', upload.single('profile'), (req, res) => {
-    res.send(req.file);
+
+const filesConfig = [{ name: 'chinh', maxCount: 1 }, { name: 'phu', maxCount: 2 }];
+
+app.post('/signup', upload.fields(filesConfig), (req, res) => {
+
+    // up nhieu file thi doi file thanh files
+    res.send(req.files);
 });
 
 app.use((err, req, res, next) => {

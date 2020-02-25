@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 /* eslint-disable eol-last */
 const multer = require('multer');
 
@@ -13,6 +14,7 @@ const storage = multer.diskStorage({
 const limits = { fileSize: 1024000 };
 // dest : chỉ cho phép lưu ở đâu
 // const upload = multer({ dest: './public' });
+
 
 function fileFilter(req, file, cb) {
     const { mimetype } = file;
