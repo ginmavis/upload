@@ -1,9 +1,20 @@
+/* eslint-disable prefer-template */
 /* eslint-disable eol-last */
 const express = require('express');
 const multer = require('multer');
 
-const upload = multer({ dest: './public' });
+// cho phép lưu ở đâu , đặt tên file, và xử lí hàm
+const storage = multer.diskStorage({
+    destination: (req, file, cd) => cd(null, './public'),
+    filename: (req, file, cb) => cb(null, file.originalname)
+        //req.body.email :đặt tên file theo tên gmail đăng nhập (fail)
+        //file.originalname : lấy tên file ở trong máy
+});
 
+// dest : chỉ cho phép lưu ở đâu
+// const upload = multer({ dest: './public' });
+
+const upload = multer({ storage });
 
 const app = express();
 
