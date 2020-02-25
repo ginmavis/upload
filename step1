@@ -1,0 +1,20 @@
+1 - cài git :git init
+2 - nodejs :npm init -y
+3 - express- npm install express
+4 - tạo file .eslintrc và ghi vào 
+     {
+    "extends" : "rallycoding"
+}
+5 - npm install eslint-config-rallycoding --save-dev
+
+6 - tạo file .gitignore rồi ghi tên file node_modules
+
+7 - cài template engine(ejs, bug ,....)
+    npm install ejs 
+
+    trong index.js thêm 2 dòng :
+        app.set('views','[dường dẫn đến thức mục]');
+        app.set('view engine' , 'ejs');
+ 8 - Khi upload file thì cần cài thêm 
+
+    npm install --save multer
